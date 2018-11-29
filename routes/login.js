@@ -1,14 +1,14 @@
 const express = require('express')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const User = require('./../models/user')
 
 const app = express()
 
 app.post('/login', (req, res) => {
     console.log('login')
     let body = req.body
-    const conn = req.connection
-    conn.user.findOne({ correo: body.correo }, (err, userDB) => {
+    User.findOne({ correo: body.correo }, (err, userDB) => {
         if(err) {
             return res.status(400).json({
                 ok: false,
