@@ -14,6 +14,8 @@ app.use(bodyParser.json())
 // Middleware
 app.use(perimitirCrossDomain)
 
+app.use('/api/', require('./routes/user'))
+app.use('/api/', require('./routes/login'))
 
 app.get('', (req, res) => {
     res.send('Res Api is running...')
