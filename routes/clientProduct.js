@@ -8,7 +8,18 @@ app.get('/client-product', (req, res) => {
     })
 
 })
-
+app.get('/client-product/client-product-by-product/:idProduct', (req, res) => {
+    const idProduct = req.params.idProduct
+    ClientProduct.find({ producto: idProduct }).
+    populate('usuario').
+    exec(function (err, clientProductDB) {
+        if (err) return handleError(err)
+        res.json({
+            ok: true, 
+            clientProductDB
+        })
+    })
+})
 app.post('/client-product', (req, res) => {
     let body = req.body
     let clientProduct = new ClientProduct(body)
