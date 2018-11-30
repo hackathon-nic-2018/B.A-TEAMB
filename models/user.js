@@ -22,6 +22,7 @@ const usuarioSchema = new Schema({
     },
     rol: {
         type: String,
+        uppercase: true,
         enum: ['CLIENTE', 'TRABAJADOR'],
         default: 'TRABAJADOR'
     },
