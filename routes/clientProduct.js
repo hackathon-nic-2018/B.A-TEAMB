@@ -24,6 +24,7 @@ app.get('/client-product/product-by-client/:idClient', (req, res) => {
     const idClient = req.params.idClient
     ClientProduct.find({ usuario: idClient }).
     populate('producto').
+    populate('usuario').
     exec(function (err, clientProductDB) {
         if (err) return handleError(err)
         res.json({
