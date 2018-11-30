@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
-const Servicio = require('./../models/servicio')
+const Servicio = require('../models/service')
 
 app.get('/service', (req, res) => {
     Servicio.find({}, (err, data) => {
