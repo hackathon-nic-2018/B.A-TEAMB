@@ -18,4 +18,4 @@ const servicioSchema = new Schema({
 servicioSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único'})
 
 
-module.exports = mongoose.model('User', servicioSchema)
+module.exports = mongoose.model('Service', servicioSchema)
