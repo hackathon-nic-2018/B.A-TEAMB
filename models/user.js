@@ -12,14 +12,53 @@ const usuarioSchema = new Schema({
         unique: true,
         required: [true, 'El correo es requerido']
     },
+    telefono: {
+        type: String,,
+        required: [true, 'El correo es requerido']
+    },
     contrasena: {
         type: String,
         required: [true, 'La contraseña es requerida']
+    },
+    rol: {
+        type: String,
+        enum: ['CLIENTE', 'TRABAJADOR'],
+        default: 'TRABAJADOR'
+    },
+    edad: {
+        type: String,
+        required: [true, 'La edad es requerida']
+    },
+    descripcion: {
+        type: String,
+        required: [true, 'La descripción es requerida']
+    },
+    pais: {
+        type: String,
+        required: [true, 'El pais es requerido']
+    },
+    departamento: {
+        type: String,
+        required: [true, 'El departamento es requerido']
+    },
+    municipio: {
+        type: String,
+        required: [true, 'El municipio']
+    },
+    sexo: {
+        type: String,
+        enum: ['MASCULINO', 'FEMENINO'],
+        default: 'TRABAJADOR'
+    },
+    cedula: {
+        type: String,
+        required: [true, 'La cedula es requerida']
     },
     estado: {
          type: Boolean,
          default: true
     }
+
 })
 
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único'})
