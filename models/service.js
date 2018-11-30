@@ -6,6 +6,7 @@ const servicioSchema = new Schema({
     nombre: {
         type: String,
         unique: true,
+        uppercase: true,
         required: [true, 'El nombre es requerido']
     },
     descripcion: {
