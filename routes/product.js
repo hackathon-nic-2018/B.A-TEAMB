@@ -1,18 +1,18 @@
 const express = require('express')
 const app = express()
-const Servicio = require('../models/service')
+const Product = require('../models/product')
 
-app.get('/service', (req, res) => {
-    Servicio.find({}, (err, data) => {
+app.get('/product', (req, res) => {
+    Product.find({}, (err, data) => {
         res.json(data)
     })
 
 })
 
-app.post('/service', (req, res) => {
+app.post('/product', (req, res) => {
     let body = req.body
-    let servicio = new Servicio(body)
-    servicio.save((err, servicioDB) => {
+    let product = new Product(body)
+    product.save((err, productDB) => {
         if (err) {
            return res.status(500).json({
                err
@@ -20,7 +20,7 @@ app.post('/service', (req, res) => {
         }
         res.json({
             ok: true, 
-            servicioDB
+            productDB
         })
     })
 })
