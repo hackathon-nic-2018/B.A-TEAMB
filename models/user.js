@@ -35,14 +35,17 @@ const usuarioSchema = new Schema({
     },
     pais: {
         type: String,
+        uppercase: true,
         required: [true, 'El pais es requerido']
     },
     departamento: {
         type: String,
+        uppercase: true,
         required: [true, 'El departamento es requerido']
     },
     municipio: {
         type: String,
+        uppercase: true,
         required: [true, 'El municipio']
     },
     sexo: {
@@ -53,6 +56,10 @@ const usuarioSchema = new Schema({
     cedula: {
         type: String,
         required: [true, 'La cedula es requerida']
+    },
+    fotourl: {
+        type: String,
+        default: 'https://firebasestorage.googleapis.com/v0/b/hacknic2018.appspot.com/o/img%2Fuser.png?alt=media&token=a9d59d0f-4084-4437-9354-ac81196391f9'
     },
     estado: {
          type: Boolean,
