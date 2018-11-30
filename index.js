@@ -22,7 +22,7 @@ app.get('', (req, res) => {
 })
 
 
-mongoose.connect('mongodb://helenampie:hfaa031097@ds113046.mlab.com:13046/auroradb', (err, res) => {
+mongoose.connect('mongodb://hack2018:hack2018@ds121814.mlab.com:21814/hackathonic-db', (err, res) => {
     if (err) throw err
     console.log('COMMON DB ONLINE...')
 })
