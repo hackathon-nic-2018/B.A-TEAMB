@@ -8,6 +8,13 @@ app.get('/product', (req, res) => {
     })
 
 })
+app.get('/product/product-by-userid/:userId', (req, res) => {
+    const userId = req.params.userId
+    Product.find({ usuario: userId }, (err, data) => {
+        res.json(data)
+    })
+
+})
 
 app.post('/product', (req, res) => {
     let body = req.body
