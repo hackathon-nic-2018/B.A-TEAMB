@@ -17,6 +17,7 @@ app.use(perimitirCrossDomain)
 app.use('/api/', require('./routes/user'))
 app.use('/api/', require('./routes/login'))
 app.use('/api/', require('./routes/service'))
+app.use('/api/', require('./routes/product'))
 app.use('/api/', require('./routes/clientProduct'))
 
 app.get('', (req, res) => {
