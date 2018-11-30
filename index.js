@@ -14,11 +14,13 @@ app.use(bodyParser.json())
 // Middleware
 app.use(perimitirCrossDomain)
 
+// Setting Up Routes
 app.use('/api/', require('./routes/user'))
 app.use('/api/', require('./routes/login'))
 app.use('/api/', require('./routes/service'))
 app.use('/api/', require('./routes/product'))
 app.use('/api/', require('./routes/clientProduct'))
+app.use('/api/', require('./routes/trabajadorServicio'))
 
 app.get('', (req, res) => {
     res.send('Res Api is running...')

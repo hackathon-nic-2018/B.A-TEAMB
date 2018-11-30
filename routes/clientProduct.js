@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const ClientProduct = require('../models//clientProduct.js')
+const ClientProduct = require('../models/clientProduct.js')
 
 app.get('/client-product', (req, res) => {
     ClientProduct.find({}, (err, data) => {
