@@ -16,6 +16,7 @@ app.use(perimitirCrossDomain)
 
 app.use('/api/', require('./routes/user'))
 app.use('/api/', require('./routes/login'))
+app.use('/api/', require('./routes/service'))
 
 app.get('', (req, res) => {
     res.send('Res Api is running...')
