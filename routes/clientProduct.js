@@ -20,6 +20,18 @@ app.get('/client-product/client-product-by-product/:idProduct', (req, res) => {
         })
     })
 })
+app.get('/client-product/product-by-client/:idClient', (req, res) => {
+    const idClient = req.params.idClient
+    ClientProduct.find({ usuario: idClient }).
+    populate('producto').
+    exec(function (err, clientProductDB) {
+        if (err) return handleError(err)
+        res.json({
+            ok: true, 
+            clientProductDB
+        })
+    })
+})
 app.post('/client-product', (req, res) => {
     let body = req.body
     let clientProduct = new ClientProduct(body)
