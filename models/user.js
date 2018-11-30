@@ -55,6 +55,7 @@ const usuarioSchema = new Schema({
     },
     cedula: {
         type: String,
+        unique: true,
         required: [true, 'La cedula es requerida']
     },
     fotourl: {
