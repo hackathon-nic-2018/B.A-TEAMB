@@ -47,7 +47,7 @@ const usuarioSchema = new Schema({
     municipio: {
         type: String,
         uppercase: true,
-        required: [true, 'El municipio']
+        required: [true, 'El municipio es requerido']
     },
     sexo: {
         type: String,
