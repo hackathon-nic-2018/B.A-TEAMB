@@ -53,7 +53,7 @@ const usuarioSchema = new Schema({
         type: String,
         uppercase: true,
         enum: ['MASCULINO', 'FEMENINO'],
-        default: 'TRABAJADOR'
+        default: 'MASCULINO'
     },
     cedula: {
         type: String,
