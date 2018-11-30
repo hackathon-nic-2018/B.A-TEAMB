@@ -13,7 +13,7 @@ const usuarioSchema = new Schema({
         required: [true, 'El correo es requerido']
     },
     telefono: {
-        type: String,,
+        type: String,
         required: [true, 'El correo es requerido']
     },
     contrasena: {
