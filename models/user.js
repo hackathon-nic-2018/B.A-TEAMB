@@ -50,6 +50,7 @@ const usuarioSchema = new Schema({
     },
     sexo: {
         type: String,
+        uppercase: true,
         enum: ['MASCULINO', 'FEMENINO'],
         default: 'TRABAJADOR'
     },
